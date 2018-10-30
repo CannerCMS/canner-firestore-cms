@@ -6,7 +6,10 @@
   "scripts": {
     "start": "webpack-dev-server --mode development --history-api-fallback",
     "build": "webpack --mode production",
-    "prettier": "prettier --write \"src/**/*.{ts,tsx,css}\""
+    "prettier": "prettier --write \"src/**/*.{ts,tsx,css}\"",
+    "import:auth": "firebase auth:import firebase-default-user.json",
+    "serve": "firebase serve",
+    "deploy": "firebase deploy --only hosting"
   },
   "theme": {
     "menu-dark-bg": "#373d62",
@@ -32,6 +35,7 @@
     "babel-plugin-import": "^1.11.0",
     "canner-schema-loader": "2.0.8",
     "canner-script": "2.0.8",
+    "copy-webpack-plugin": "^4.5.4",
     "css-loader": "^1.0.1",
     "html-webpack-plugin": "^3.2.0",
     "less": "^3.8.1",

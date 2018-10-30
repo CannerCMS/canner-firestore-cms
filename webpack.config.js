@@ -1,6 +1,7 @@
 const antdTheme = require('./package.json').theme;
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const path = require('path');
 
 const devMode = process.env.NODE_ENV !== 'production'
@@ -64,6 +65,9 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: devMode ? '[name].css' : '[name].[hash].css',
       chunkFilename: devMode ? '[id].css' : '[id].[hash].css',
-    })
+    }),
+    new CopyWebpackPlugin([
+      {from: 'static', to: 'static'}
+    ])
   ]
 };
