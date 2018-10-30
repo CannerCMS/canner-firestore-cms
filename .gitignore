@@ -7,3 +7,4 @@ _gh-pages
 *.log
 .cache
 dist
+.firebase
