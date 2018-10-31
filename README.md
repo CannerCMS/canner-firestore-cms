@@ -1,5 +1,5 @@
 # canner-firestore-cms
-The example of building the CMS with Canner and Firestore
+The example of building the CMS with Canner and Firestore, and deploy to Firebase hosting.
 
 Live Demo: [https://fir-cms-15f83.firebaseapp.com](https://fir-cms-15f83.firebaseapp.com)
 
