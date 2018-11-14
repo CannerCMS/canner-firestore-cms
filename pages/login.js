@@ -45,7 +45,7 @@ class CMSApp extends React.Component {
 
     return (
       <BodyWrapper>
-        <GithubCorner href="https://github.com/canner/canner-firebase-cms" />
+        <GithubCorner href="https://github.com/canner/canner-firestore-cms" />
         <Row type="flex" justify="space-around" align="middle" style={{height: '100%'}}>
           <Col span={12}>
             <LogoContainer>
