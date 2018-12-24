@@ -1,4 +1,6 @@
 # canner-firestore-cms
+
+[![Join the community on Spectrum](https://withspectrum.github.io/badge/badge.svg)](https://spectrum.chat/canner/cannercms)
 The example of building the CMS with Canner and Firestore, and deploy to Firebase hosting.
 
 Live Demo: [https://fir-cms-15f83.firebaseapp.com](https://fir-cms-15f83.firebaseapp.com)
