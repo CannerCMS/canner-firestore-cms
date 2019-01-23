@@ -1,26 +1,24 @@
+/** @jsx CannerScript */
 
-/** @jsx builder */
-import builder, {Layout, Row, Col, Block} from 'canner-script';
+import CannerScript, {Default, Layout, Row, Col, Block} from 'canner-script';
 import Panel from './layouts/panel';
+import TitleComponent from './layouts/Title';
+import PSComponent from './layouts/PS';
 
-const Collapse = ({children}) => <Layout component={Panel}>{children}</Layout>
-export const Focus = ({children, attributes: {focusKeys}}) => {
-  return (
-    <Row type="flex" gutter={16} style={{marginBottom: 16}}>
-      <Col xs={24} sm={24} md={16} lg={16}>
-        <Block>
-          {
-            children.filter(child => focusKeys.includes(child.keyName))
-          }
-        </Block>
-      </Col>
-      <Col xs={24} sm={24} md={8} lg={8}>
-        <Collapse>
-          {
-            children.filter(child => !focusKeys.includes(child.keyName))
-          }
-        </Collapse>
-      </Col>
-    </Row>
-  );
-}
+export const BorderTop = ({attributes, children}) => (
+  <Default style={{...((attributes || {}).style || {}), borderTop: '1px solid #ccc', paddingTop: 16}}>
+    {children}    
+  </Default>
+)
+
+export const Title = ({attributes, children}) => (
+  <Layout component={TitleComponent} {...attributes}>
+    {children}
+  </Layout>
+)
+
+export const PS = ({attributes, children}) => (
+  <Layout component={PSComponent} {...attributes}>
+    {children}
+  </Layout>
+)

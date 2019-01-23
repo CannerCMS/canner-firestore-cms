@@ -54,7 +54,7 @@
     "@canner/history-router": "^2.0.10",
     "@canner/storage": "^2.0.10",
     "antd": "3.10.7",
-    "canner": "^2.0.10",
+    "canner": "^2.0.50",
     "canner-helpers": "^2.0.10",
     "canner-layouts": "^2.0.10",
     "firebase": "^5.5.8",
