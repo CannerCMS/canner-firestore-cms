@@ -6,5 +6,4 @@ const client = createClient({
   schema: schema.schema,
   connector: utils.connector
 });
-console.log({schema, connector: utils.connector, client})
 export default client;
