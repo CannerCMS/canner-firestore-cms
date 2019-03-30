@@ -21,7 +21,7 @@ export function renderStatus(text, record) {
   if (!publish || publish.type === 'now' || moment(publish.date).unix() < moment().unix()) {
     return <Tag color="green">Published</Tag>;
   }
-  return <Tag color="blue">Scheduled: {moment(publish.date).format('YYYY/MM/dd')}</Tag>;
+  return <Tag color="blue">Scheduled: {moment(publish.date).format('YYYY/MM/DD')}</Tag>;
 }
 
 export function renderCategory(category, record, cannerProps) {
