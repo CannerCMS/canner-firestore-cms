@@ -1,21 +1,13 @@
 import * as React from 'react';
 import * as firebase from 'firebase';
 import styled from 'styled-components';
-import {Layout, Menu, Modal, Table, Badge, Avatar, Icon, Spin, notification} from 'antd';
+import {Menu, Modal, Table, Avatar} from 'antd';
 import Canner from 'canner';
 import Container, {transformSchemaToMenuConfig} from '@canner/container';
 import R from '@canner/history-router';
 import schema from '../schema/canner.schema';
-import { LogoContainer, HeaderMenu } from 'components/dashboard';
 import firebaseConfig from '../config-firebase';
-
-const confirm = Modal.confirm;
-const MenuText = styled.span`
-  color: rgba(255, 255, 255, .65);
-  &:hover {
-    color: #fff;
-  }
-`;
+import client from '../schema/utils/client';
 
 const UserName = styled.span`
   margin-left: 8px;
@@ -26,7 +18,6 @@ const AvatarWithIcon = styled(Avatar)`
     margin-right: 0 !important;
   }
 `
-const { Header, Sider, Content, Footer } = Layout;
 
 if (!firebase.apps.length) {
   firebase.initializeApp(firebaseConfig);
@@ -78,7 +69,7 @@ export default class Dashboard extends React.Component {
   }
 
   render() {
-    const {dataChanged, user, deploying} = this.state;
+    const {user} = this.state;
     const {history} = this.props;
     const columns = [{
       title: 'Project ID',
@@ -100,10 +91,7 @@ export default class Dashboard extends React.Component {
     }];
 
     // const secondPath = window.location.pathname.split('/')[2];
-    const secondPath = 'posts'
-    const hasChanged = dataChanged && Object.keys(dataChanged).length;
     const username = user ? user.displayName || user.email : 'loading...';
-    const spinIcon = <Icon type="loading" style={{ fontSize: 24 }} spin />;
     return (
       <React.Fragment>
         <Container
@@ -112,14 +100,12 @@ export default class Dashboard extends React.Component {
           sidebarConfig={{
             menuConfig: [
               ...transformSchemaToMenuConfig(schema.schema)
-            ]
+            ],
+            logo: {
+              src: "/static/logo-word-white.png"
+            }
           }}
           navbarConfig={{
-            logo: (
-              <LogoContainer>
-                <img src="/static/logo-word-white.png" width={150} alt="logo"/>
-              </LogoContainer>
-            ),
             showSaveButton: true,
             renderMenu: () => (
               <Menu
@@ -144,7 +130,9 @@ export default class Dashboard extends React.Component {
             baseUrl: "/dashboard"
           })}
         >
-          <Canner />
+          <Canner
+            client={client}
+          />
         </Container>
         <Modal
           width={"80%"}

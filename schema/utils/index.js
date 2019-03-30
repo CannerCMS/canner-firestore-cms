@@ -1,7 +1,6 @@
 import firebase from 'firebase';
 import {FirebaseClientStorage} from '@canner/storage';
-import * as GraphQLinterface from 'canner-graphql-interface';
-
+import {FirestoreClientConnector} from 'canner-graphql-interface';
 if (!firebase.apps.length) {
   // Setup connector to connect your services
   firebase.initializeApp({
@@ -14,7 +13,7 @@ if (!firebase.apps.length) {
   });
 }
 const defaultApp = firebase.app();
-const connector = new GraphQLinterface.FirestoreClientConnector({
+const connector = new FirestoreClientConnector({
   database: defaultApp.firestore()
 });
 
