@@ -1,3 +1,7 @@
+# WARNING: Project is discontinued
+
+As mentioned on the [website](https://www.cannercms.com/?lang=en) and [community](https://spectrum.chat/canner/general/very-disapointed~0b559f8a-89c5-4ce3-badb-cdc212e96001), this project has been discontinued. 
+
 # canner-firestore-cms
 
 [![Join the community on Spectrum](https://withspectrum.github.io/badge/badge.svg)](https://spectrum.chat/canner/cannercms)
